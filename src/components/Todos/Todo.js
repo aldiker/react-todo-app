@@ -1,8 +1,12 @@
 function Todo(props) {
-    const { todo } = props
+    const { todo, onDoubleClick, index } = props
+
+    function delTodo() {
+        onDoubleClick(index)
+    }
 
     return (
-        <div className='Todo'>
+        <div className='Todo' onDoubleClick={delTodo}>
             <h1>{todo}</h1>
         </div>
     )
