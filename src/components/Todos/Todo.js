@@ -1,7 +1,9 @@
-function Todo() {
+function Todo(props) {
+    const { todo } = props
+
     return (
         <div className='Todo'>
-            <input type='text' name='todo' />
+            <h1>{todo}</h1>
         </div>
     )
 }

@@ -1,11 +1,13 @@
 import Todo from './Todo'
 
-function TodoList() {
+function TodoList(props) {
+    const { arrayTodos } = props
+
     return (
         <div className='TodoList'>
-            <Todo />
-            <Todo />
-            <Todo />
+            {arrayTodos.map((todo, index) => {
+                return <Todo todo={todo} key={index} />
+            })}
         </div>
     )
 }
