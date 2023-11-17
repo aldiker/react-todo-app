@@ -1,5 +1,5 @@
 function Todo(props) {
-    const { todo, onDoubleClick, index } = props
+    const { todo, index, onDoubleClick } = props
 
     function delTodo() {
         onDoubleClick(index)
@@ -7,7 +7,7 @@ function Todo(props) {
 
     return (
         <div className='Todo' onDoubleClick={delTodo}>
-            <h1>{todo}</h1>
+            <h3>{todo}</h3>
         </div>
     )
 }

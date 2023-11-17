@@ -1,17 +1,17 @@
 import Todo from './Todo'
 
 function TodoList(props) {
-    const { arrayTodos, deleteTodoFromList } = props
+    const { todos, delTodo } = props
 
     return (
         <div className='TodoList'>
-            {arrayTodos.map((todo, index) => {
+            {todos.map((todo, index) => {
                 return (
                     <Todo
-                        todo={todo}
                         key={index}
+                        todo={todo}
                         index={index}
-                        onDoubleClick={deleteTodoFromList}
+                        onDoubleClick={delTodo}
                     />
                 )
             })}

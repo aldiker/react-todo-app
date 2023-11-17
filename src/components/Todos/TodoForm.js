@@ -1,24 +1,24 @@
 import { useState } from 'react'
+import styles from './TodoForm.module.css'
 
 function TodoForm(props) {
-    const { onClick } = props
+    const { addTodo } = props
 
-    const [todoName, setTodoName] = useState('')
+    const [newTodo, setNewTodo] = useState('')
 
-    function handleFormSubmit(event) {
+    function onSubmitHandler(event) {
         event.preventDefault()
-        onClick(todoName)
-        setTodoName('')
+        addTodo(newTodo)
+        setNewTodo('')
     }
 
     return (
-        <div className='TodoForm'>
-            <form onSubmit={handleFormSubmit}>
+        <div className={styles.todoFormContainer}>
+            <form onSubmit={onSubmitHandler}>
                 <input
                     type='text'
-                    name='todoName'
-                    value={todoName}
-                    onChange={(event) => setTodoName(event.target.value)}
+                    value={newTodo}
+                    onChange={(event) => setNewTodo(event.target.value)}
                     placeholder='Enter new todo'
                 />
                 <button type='submit'>Sumbit</button>

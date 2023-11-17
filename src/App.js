@@ -1,30 +1,28 @@
 import { useState } from 'react'
 import './App.css'
+
 import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
 
 function App() {
-    function addTodoToList(todo) {
-        setArrayTodos([...arrayTodos, todo])
+    const [todos, setArrayTodos] = useState([])
+    console.log(todos)
+
+    function addTodoHandler(todo) {
+        setArrayTodos([...todos, todo])
     }
 
-    function deleteTodoFromList(idx) {
-        const tempArray = [...arrayTodos]
+    function deleteTodoHandler(idx) {
+        const tempArray = [...todos]
         tempArray.splice(idx, 1)
         setArrayTodos(tempArray)
     }
 
-    const [arrayTodos, setArrayTodos] = useState([])
-    console.log(arrayTodos)
-
     return (
         <div className='App'>
             <h1>Todo App</h1>
-            <TodoForm onClick={addTodoToList} />
-            <TodoList
-                arrayTodos={arrayTodos}
-                deleteTodoFromList={deleteTodoFromList}
-            />
+            <TodoForm addTodo={addTodoHandler} />
+            <TodoList todos={todos} delTodo={deleteTodoHandler} />
         </div>
     )
 }
