@@ -1,10 +1,11 @@
 import Todo from './Todo'
+import styles from './TodoList.module.css'
 
 function TodoList(props) {
     const { todos, delTodo } = props
 
     return (
-        <div className='TodoList'>
+        <div className={styles.todoListContainer}>
             {todos.map((todo, index) => {
                 return (
                     <Todo

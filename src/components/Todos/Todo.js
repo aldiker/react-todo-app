@@ -1,3 +1,5 @@
+import styles from './Todo.module.css'
+
 function Todo(props) {
     const { todo, index, onDoubleClick } = props
 
@@ -6,8 +8,8 @@ function Todo(props) {
     }
 
     return (
-        <div className='Todo' onDoubleClick={delTodo}>
-            <h3>{todo}</h3>
+        <div className={styles.todo} onDoubleClick={delTodo}>
+            <div className={styles.todoText}>{todo}</div>
         </div>
     )
 }

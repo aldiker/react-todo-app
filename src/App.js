@@ -19,9 +19,17 @@ function App() {
     }
 
     return (
-        <div className='App'>
+        <div className="App">
             <h1>Todo App</h1>
             <TodoForm addTodo={addTodoHandler} />
+
+            {/* {!todos.length ? (
+                <h2>Todo list is empty</h2>
+            ) : (
+                <TodoList todos={todos} delTodo={deleteTodoHandler} />
+            )} */}
+
+            {!todos.length && <h2>Todo list is empty</h2>}
             <TodoList todos={todos} delTodo={deleteTodoHandler} />
         </div>
     )
