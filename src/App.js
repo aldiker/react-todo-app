@@ -1,19 +1,25 @@
 import { useState } from 'react'
-import './App.css'
+import { v4 as uuidv4 } from 'uuid'
 
 import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
+import './App.css'
 
 function App() {
     const [todos, setTodos] = useState([])
     console.log(todos)
 
     function addTodoHandler(todo) {
-        setTodos([...todos, todo])
+        const newTodo = {
+            name: todo,
+            isCompleted: false,
+            id: uuidv4(),
+        }
+        setTodos([...todos, newTodo])
     }
 
-    function deleteTodoHandler(idx) {
-        setTodos(todos.filter((todo, index) => index !== idx))
+    function deleteTodoHandler(id) {
+        setTodos(todos.filter((todo) => todo.id !== id))
     }
 
     return (

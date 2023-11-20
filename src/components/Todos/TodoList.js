@@ -6,12 +6,12 @@ function TodoList(props) {
 
     return (
         <div className={styles.todoListContainer}>
-            {todos.map((todo, index) => {
+            {todos.map((todo) => {
                 return (
                     <Todo
-                        key={index}
-                        todo={todo}
-                        index={index}
+                        key={todo.id}
+                        todo={todo.name}
+                        index={todo.id}
                         onDoubleClick={delTodo}
                     />
                 )
