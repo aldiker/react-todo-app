@@ -8,12 +8,7 @@ function TodoList(props) {
         <div className={styles.todoListContainer}>
             {todos.map((todo) => {
                 return (
-                    <Todo
-                        key={todo.id}
-                        todo={todo.name}
-                        index={todo.id}
-                        onDoubleClick={delTodo}
-                    />
+                    <Todo key={todo.id} todo={todo} onDoubleClick={delTodo} />
                 )
             })}
         </div>
