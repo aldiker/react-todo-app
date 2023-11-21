@@ -1,5 +1,6 @@
 import Button from '../UI/Button'
 import { RiDeleteBin2Line, RiRefreshLine } from 'react-icons/ri'
+import styles from './TodosActions.module.css'
 
 function TodosActions({
     resetTodos,
@@ -7,7 +8,7 @@ function TodosActions({
     clearCompletedButtonDisable,
 }) {
     return (
-        <>
+        <div className={styles.todosActionsContainer}>
             <Button onClick={resetTodos} title='Reset Todos'>
                 <RiRefreshLine />
             </Button>
@@ -17,7 +18,7 @@ function TodosActions({
                 disabled={clearCompletedButtonDisable}>
                 <RiDeleteBin2Line />
             </Button>
-        </>
+        </div>
     )
 }
 
