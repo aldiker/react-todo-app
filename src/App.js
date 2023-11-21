@@ -38,7 +38,6 @@ function App() {
             <h1>Todo App</h1>
             <TodoForm addTodo={addTodoHandler} />
             <TodosActions />
-            {!todos.length && <h2>Todo list is empty</h2>}
             <TodoList
                 todos={todos}
                 delTodo={deleteTodoHandler}

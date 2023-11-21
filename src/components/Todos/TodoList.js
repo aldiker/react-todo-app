@@ -6,6 +6,8 @@ function TodoList(props) {
 
     return (
         <div className={styles.todoListContainer}>
+            {!todos.length && <h2>Todo list is empty</h2>}
+
             {todos.map((todo) => {
                 return (
                     <Todo
